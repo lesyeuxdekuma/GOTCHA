@@ -1,0 +1,261 @@
+body {
+    background-image: url("resources/bg/default.gif");
+    background-repeat: repeat;
+    background-size: cover;
+    min-height: 75vh;
+    font-family: "Press Start 2P", cursive;
+    transition: background-image 3s ease;
+}
+
+
+/* DISPLAY NEW AND MAIN TO NONE BY DEFAULT */
+#new, #main, #minigame {
+    display: none;
+}
+
+
+/* HEADER */
+#header {
+    background-color: #66dbff;
+    border-bottom: calc(0.25vw + 0.25vh) solid black;
+}
+
+#header img {
+    filter: hue-rotate(250deg) brightness(1.4);
+    width: 5%;
+}
+
+#header h1 {
+    font-size: 2vw;
+}
+
+
+/* NEW */
+.carousel-control-prev img, .carousel-control-next img {
+    object-fit: contain;
+}
+
+.carousel-control-prev img {
+    transform: rotate(180deg);
+}
+
+.carousel-item img {
+    height: 35vh;
+    object-fit: contain;
+}
+
+#name label, #name input {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    text-align: center;
+}
+
+#name input {
+    border-radius: 0;
+    border: calc(0.25vw + 0.25vh) solid black;
+    text-transform: uppercase;
+}
+
+#playButton {
+    background-color: #b8e83f;
+    border-radius: 0;
+    border: calc(0.25vw + 0.25vh) solid black;
+    font-size: 1.5vw;
+}
+
+#playButton:hover {
+    filter: brightness(0.9);
+    transition: filter 0.1s ease-in-out;
+}
+
+.alert {
+    border-radius: 0;
+    border: calc(0.25vw + 0.25vh) solid #b02a37;
+    font-size: calc(0.5vw + 0.25vh);
+}
+
+
+/* MAIN */
+#info {
+    background-color: #b8e83f;
+    border: calc(0.25vw + 0.25vh) solid black;
+}
+
+#time {
+    font-size: calc(1vw + 0.5vh);
+}
+
+#petName {
+    font-size: calc(1.5vw + 0.75vh);
+}
+
+#greeting {
+    font-size: calc(0.75vw + 0.375vh);
+}
+
+.bubble {
+    position: relative;
+    background-color: white;
+    max-width: 20vw;
+    margin: 10px;
+    font-size: calc(1vw + 0.5vh);
+    border: calc(0.25vw + 0.25vh) solid black;
+}
+  
+.bubble::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    border-style: solid;
+    border-width: calc(1vw + 0.5vh);
+    border-color: transparent black transparent transparent;
+    transform: translateY(-50%);
+}
+  
+#petImage {
+    width: 10%;
+    object-fit: contain;
+}
+
+#petImage, .bubble, #onActivity {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+.pet-glow {
+    animation: glow 1s ease-in-out;
+}
+  
+@keyframes glow {
+    0% {
+        filter: brightness(8);
+    }
+    50% {
+        filter: brightness(4);
+    }
+    75% {
+        filter: brightness(2);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.pet-heal {
+    animation: heal 2s ease-in-out;
+}
+
+@keyframes heal {
+    0% {
+        filter: brightness(8) hue-rotate(60deg);
+    }
+    50% {
+        filter: brightness(4) hue-rotate(120deg);
+    }
+    75% {
+        filter: brightness(2) hue-rotate(240deg);
+    }
+    100% {
+        filter: brightness(1) hue-rotate(360deg);
+    }
+}
+
+#onActivity {
+    width: 5%;
+    object-fit: contain;
+}
+
+#status {
+    border: calc(0.25vw + 0.25vh) solid black;
+    background-color: #b8e83f;
+}
+
+#status img {
+    width: calc(2vw + 2vh);
+}
+
+#eatStat img {
+    width: calc(2vw + 1vh);
+}
+
+#status .progress {
+    border-radius: 0;
+    border: calc(0.25vw + 0.25vh) solid black;
+    height: calc(1.5vw + 2vh);
+}
+
+#status .row {
+    height: 100%; 
+}
+
+#status .col {
+    height: 100%; 
+}
+
+#level {
+    font-size: calc(1vh + 0.5vw);
+}
+
+#activities button {
+    background-color: #66dbff;
+    border-radius: 0;
+    border: calc(0.25vw + 0.25vh) solid black;
+    color: black;
+    font-size: calc(1vh + 0.5vw);
+}
+
+#activities button:hover {
+    filter: brightness(0.8);
+
+}
+
+
+/* MINIGAME */
+#gameContainer {
+    padding: 0;
+    margin: 0;
+    width: 50vw;
+    height: 35vh;
+    border: calc(0.25vw + 0.25vh) solid black;
+    background-image: url("resources/bg/default.gif"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#character {
+    height: 10vh;
+    object-fit: contain;
+    position: relative;
+    top: 157px;
+    left: 50px;
+    transform: scaleX(-1);
+}
+
+.animate {
+    animation: jump 500ms;
+}
+
+@keyframes jump {
+    0%{top: 157px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 157px;}
+}
+
+#block {
+    width: 20px;
+    height: 17px;
+    position: relative;
+    top: 170px;
+    left: 5px;
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0%{left: 512px;}
+    100%{left: -100px;}
+}
+
+#gameAlert {
+    font-size: calc(1vw + 0.5vh);
+}
